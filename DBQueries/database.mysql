@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS listarinscripciones;
+USE edutecno;
+
+CREATE TABLE curso (
+    id_curso INT PRIMARY KEY AUTO_INCREMENT, 
+    descripcion VARCHAR(100) NOT NULL,
+    precio INT NOT NULL
+    );
+
+  CREATE TABLE forma_pago (
+      id_forma_pago VARCHAR(50),
+      descripcion VARCHAR(100) NOT NULL,
+      recargo VARCHAR(100) NOT NULL
+      );
+
+  CREATE TABLE inscripcion(
+      id_inscripcion INT PRIMARY KEY AUTO_INCREMENT, 
+      nombre VARCHAR(100),
+      telefono VARCHAR(22), 
+      id_curso INT, 
+      id_forma_pago INT,
+      FOREIGN KEY (id_curso) REFERENCES curso(id_curso));
+
+INSERT INTO curso VALUES(NULL,'Java Enterprice Edition', 800000);
+INSERT INTO curso VALUES(NULL,'Java Standar Edition', 600000);
+INSERT INTO curso VALUES(NULL,'JavaScript ECMA 6', 500000);
+INSERT INTO forma_pago VALUES ('1598','Tarjeta Credito','10%');
+INSERT INTO forma_pago VALUES ('1547','Tarjeta Debito','15%');
+INSERT INTO forma_pago VALUES ('3578','Efectivo','5%');
