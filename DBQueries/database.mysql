@@ -1,5 +1,5 @@
 CREATE DATABASE IF NOT EXISTS listarinscripciones;
-USE edutecno;
+USE listarinscripciones;
 
 CREATE TABLE curso (
     id_curso INT PRIMARY KEY AUTO_INCREMENT, 
