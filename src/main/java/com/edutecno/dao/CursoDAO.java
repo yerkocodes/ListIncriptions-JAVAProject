@@ -30,7 +30,7 @@ public class CursoDAO {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
 			// "jdbc:mysql://localhost/DATABASENAME?user=USERNAME&password=MYPASSWORD"
-			conn = DriverManager.getConnection("jdbc:mysql://localhost/edutecno?user=root&password=123321");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost/listarinscripciones?user=root&password=123321");
 			
 			PreparedStatement pstm = conn.prepareStatement("SELECT * FROM cursos");
 			ResultSet rs = pstm.executeQuery(); // Se utiliza para los SELECT

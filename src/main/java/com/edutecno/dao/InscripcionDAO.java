@@ -21,7 +21,7 @@ public class InscripcionDAO {
 			// Clase del driver de conexion
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
-			conn = DriverManager.getConnection("jdbc:mysql://localhost/edutecno?user=root&password=123321");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost/listarinscripciones?user=root&password=123321");
 
 			PreparedStatement pstm = conn.prepareStatement("SELECT * FROM inscripcion");
 			ResultSet rs = pstm.executeQuery();
@@ -58,7 +58,7 @@ public class InscripcionDAO {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
 			// "jdbc:mysql://localhost/DATABASENAME?user=USERNAME&password=MYPASSWORD"
-			conn = DriverManager.getConnection("jdbc:mysql://localhost/edutecno?user=root&password=123321");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost/listarinscripciones?user=root&password=123321");
 
 			PreparedStatement pstm = conn.prepareStatement("INSERT INTO inscripcion (nombre, telefono, id_curso, id_forma_pago) VALUES (?, ?, ?, ?)");
 			pstm.setString(1, inscripcionDTO.getNombre());

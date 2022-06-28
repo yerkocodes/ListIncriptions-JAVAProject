@@ -21,7 +21,7 @@ public class FormaDePagoDAO {
 			// Clase del driver de conexion
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
-			conn = DriverManager.getConnection("jdbc:mysql://localhost/edutecno?user=root&password=123321");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost/listarinscripciones?user=root&password=123321");
 
 			PreparedStatement pstm = conn.prepareStatement("SELECT * FROM forma_pago");
 			ResultSet rs = pstm.executeQuery();
