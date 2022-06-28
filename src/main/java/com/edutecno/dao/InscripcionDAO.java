@@ -4,13 +4,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.edutecno.model.InscripcionDTO;
 
 public class InscripcionDAO {
-	public List<InscripcionDTO> obtieneInscripciones() {
+	public List<InscripcionDTO> obtieneInscripciones() throws SQLException {
 		List<InscripcionDTO> listaInscripciones = new ArrayList<InscripcionDTO>();
 		
 		Connection conn = null;
@@ -32,12 +33,14 @@ public class InscripcionDAO {
 				inscripcion.setTelefono(rs.getString("telefono"));
 				inscripcion.setId_curso(rs.getInt("id_curso"));
 				inscripcion.setId_forma_pago(rs.getInt("id_forma_pago"));
+				
+				listaInscripciones.add(inscripcion);
 			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			
+			conn.close();
 		}
 		
 		return listaInscripciones;
