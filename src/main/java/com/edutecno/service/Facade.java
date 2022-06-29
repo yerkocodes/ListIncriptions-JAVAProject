@@ -5,8 +5,10 @@ import java.util.List;
 
 import com.edutecno.dao.CursoDAO;
 import com.edutecno.dao.FormaDePagoDAO;
+import com.edutecno.dao.InscripcionDAO;
 import com.edutecno.model.CursoDTO;
 import com.edutecno.model.FormaDePagoDTO;
+import com.edutecno.model.InscripcionDTO;
 
 public class Facade {
 
@@ -20,5 +22,11 @@ public class Facade {
 	public List<FormaDePagoDTO> obtieneFormasDePago() throws SQLException {
 		FormaDePagoDAO formaDePagoDAO = new FormaDePagoDAO();
 		return formaDePagoDAO.obtieneFormaDePago();
+	}
+	
+	// Metodo encargado de comunicarse con el InscripcionDAO y acceder a las inscripciones
+	public List<InscripcionDTO> obtieneInscripciones() throws SQLException {
+		InscripcionDAO inscripcionDAO = new InscripcionDAO();
+		return inscripcionDAO.obtieneInscripciones();
 	}
 }
