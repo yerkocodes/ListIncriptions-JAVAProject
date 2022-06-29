@@ -44,11 +44,11 @@ public class Preinscripcion extends HttpServlet {
 			List<FormaDePagoDTO> listaFormasDePago = facade.obtieneFormasDePago();
 			
 			//setear los datos en el request para despacharlos a la vista mediante request
-			request.setAttribute("listaFormasPago", listaFormasDePago);
+			request.setAttribute("listaCursos", listaCursos);
 			request.setAttribute("listaFormasPago", listaFormasDePago);
 			
 			//despachar hacia la vista o sevlet que procesara los datos
-			request.setAttribute("inscripcion.jsp").forward(request, response);
+			request.getRequestDispatcher("inscripcion.jsp").forward(request, response);
 
 		} catch (Exception e) {
 			e.printStackTrace();
