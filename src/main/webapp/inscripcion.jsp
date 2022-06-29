@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,6 +19,65 @@
 
 	<!-- Java Standard Tag Library JSTL -->
 	<!-- https://www.baeldung.com/jstl -->
+
+	<!-- Barra de navegacion -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container">
+			<a class="navbar-brand" href="#">Listar Inscripciones</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="preinscripcion">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="preinscripcion">Agregar inscripcion</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Listar inscripciones</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Seccion Formulario ingreso valores -->
+	<section class="container">
+		<form action="posInscripcion" method="post">
+			<div class="mb-3">
+				<label for="exampleInputNombre" class="form-label">Nombre</label> <input
+					type="text" class="form-control" id="exampleInputNombre"
+					name="nombre" required>
+			</div>
+			<div class="mb-3">
+				<label for="exampleInputTelefono" class="form-label">Telefono</label>
+				<input type="text" class="form-control" id="exampleInputTelefono"
+					name="telefono" required>
+			</div>
+			<div class="mb-3">
+				<select name="idCurso" required>
+					<c:forEach items="${listaCursos}" var="temp">
+						<!-- forEach(CursoDTO temp : listaCursos) -->
+						<option value="${temp.getId_curso()}">
+							<c:out value="${temp.getDescripcion()}"></c:out>
+						</option>
+					</c:forEach>
+				</select>
+			</div>
+			<div class="mb-3">
+				<select name="idFormaPago" required>
+					<c:forEach items="${listaFormasPago}" var="temp">
+						<!-- forEach(FormaPaoDTO temp : listaFormasPago) -->
+						<option value="${temp.getId_forma_pago()}">
+							<c:out value="${temp.getDescripcion()}"></c:out>
+						</option>
+					</c:forEach>
+				</select>
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</section>
+
 
 	<!-- Bootstrap JS -->
 	<script
