@@ -32,7 +32,7 @@ public class CursoDAO {
 			// "jdbc:mysql://localhost/DATABASENAME?user=USERNAME&password=MYPASSWORD"
 			conn = DriverManager.getConnection("jdbc:mysql://localhost/listarinscripciones?user=root&password=123321");
 			
-			PreparedStatement pstm = conn.prepareStatement("SELECT * FROM cursos");
+			PreparedStatement pstm = conn.prepareStatement("SELECT * FROM curso");
 			ResultSet rs = pstm.executeQuery(); // Se utiliza para los SELECT
 			
 			while ( rs.next() ) {
@@ -46,10 +46,7 @@ public class CursoDAO {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally {
-			conn.close();
-		}
-
+		} 
 		return listaCursos;
 	}
 }
