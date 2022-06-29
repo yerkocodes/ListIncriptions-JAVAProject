@@ -29,4 +29,10 @@ public class Facade {
 		InscripcionDAO inscripcionDAO = new InscripcionDAO();
 		return inscripcionDAO.obtieneInscripciones();
 	}
+	
+	// Metodo encargado de comunicarse con el InscripcionDAO e inscribir o registrar (INSERT) la inscripcion
+	public InscripcionDTO insertarInscripciones(InscripcionDTO inscripcionDTO) throws SQLException {
+		InscripcionDAO inscripcionDAO = new InscripcionDAO();
+		return inscripcionDAO.insertarInscripcion(inscripcionDTO);
+	}
 }
