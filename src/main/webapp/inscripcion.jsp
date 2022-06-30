@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Listar Inscripciones</title>
 
@@ -35,14 +35,14 @@
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="preinscripcion">Home</a></li>
 					<li class="nav-item"><a class="nav-link" href="preinscripcion">Agregar inscripcion</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Listar inscripciones</a></li>
+					<li class="nav-item"><a class="nav-link" href="preListarInscripciones">Listar inscripciones</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 
 	<!-- Seccion Formulario ingreso valores -->
-	<section class="container">
+	<section class="container my-5">
 		<form action="posInscripcion" method="post">
 			<div class="mb-3">
 				<label for="exampleInputNombre" class="form-label">Nombre</label> <input
